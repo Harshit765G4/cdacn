@@ -1,4 +1,2 @@
-str=input("enter the text")
-
-for i in range(0,str,-1):
-    print(i,end="")
+str=input("enter the text: ")
+print(str[::-1].upper())
