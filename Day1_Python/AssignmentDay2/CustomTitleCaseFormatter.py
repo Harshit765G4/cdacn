@@ -1,9 +1,18 @@
 str = input("Enter a string: ")
+list =str.split(" ")
 
-list=str.split(" ")
-# for i in list:
-#     print(i[0][0] + i[1].lower(), end=' ')
+# result=""
+# for word in list:
+#     result += f"{word[0].upper()}{word[1:].lower()} "
+
+# print(result)
+    
 
 
-for i in list:
-    print(i.capitalize(),end=" ")
+def fun(list):
+    abc = ''
+    for i in list:
+        abc += f"{i[0][0]}{i[1:].lower()} "
+    return abc
+
+print(fun(list))
