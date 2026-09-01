@@ -7,7 +7,7 @@ name = input('Enter Your Name: ')
 phone = input('Enter Your Phone Number: ')
 
 def register_contact(phonebook, name, phone_input):
-    if not isinstance(name, str) or not name.strip() or not all(char.isalpha() or char.isspace() for char in name):
+    if not isinstance(name, str) or not name.lstrip() or not all(char.isalpha() or char.isspace() for char in name):
         raise ValueError("Value Error : Contact name must be a non-empty alphabetic string.")
 
     try:
