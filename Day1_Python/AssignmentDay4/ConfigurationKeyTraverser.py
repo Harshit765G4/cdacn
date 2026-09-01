@@ -11,7 +11,7 @@ config = {
 }
 
 def traverse_nested_config(config_dict, path_str, default=None):
-    if not isinstance(config_dict,dict) or not path_str:
+    if config_dict != dict or not path_str:
         return default
     
     try:
@@ -19,7 +19,7 @@ def traverse_nested_config(config_dict, path_str, default=None):
 
         for key in path_str.split('.'):
             value = value[key]
-            return value
+        return value
 
     except(KeyError,TypeError,AttributeError):
         return default
