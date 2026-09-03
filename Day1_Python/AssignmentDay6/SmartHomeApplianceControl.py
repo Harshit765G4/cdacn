@@ -19,6 +19,7 @@ class SmartThermostat:
         if self.MIN_TEMP <= value <= self.MAX_TEMP:
             self.__target_temp = value
         else: 
+            self.__target_temp = 22.0          
             raise ValueError("Temperature must be between 10.0 and 35.0 degrees.")
 
     @property
@@ -35,4 +36,4 @@ print(thermostat.target_temp)
 try:
     thermostat.target_temp = 5.0  
 except ValueError as e:
-    print(e)  
+    print(e)
