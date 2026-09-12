@@ -1,3 +1,0 @@
-[ROLLBACK] Batch aborted: OverdraftError - Insufficient funds. Account ACC01 has balance 100.0, requested 200.0.
-[ROLLBACK] Batch aborted: OverdraftError - Insufficient funds. Account ACC01 has balance 100.0, requested 200.0.
-[SUCCESS] Batch completed. 2 transaction(s) processed.
