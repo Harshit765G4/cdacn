@@ -1,5 +1,6 @@
 import csv
 import json
+import os
 
 
 def process_student_records(input_csv_path, output_json_path):
@@ -7,18 +8,17 @@ def process_student_records(input_csv_path, output_json_path):
     course_counts = {}
     total_score = 0.0
 
-    with open(input_csv_path, "r", newline="") as file:
+    with open(input_csv_path, "r", newline="", encoding="utf-8") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
             score = float(row["score"])
 
-            student = {
+            students.append({
                 "name": row["name"],
                 "score": score
-            }
+            })
 
-            students.append(student)
             total_score += score
 
             course = row["course"]
@@ -40,5 +40,18 @@ def process_student_records(input_csv_path, output_json_path):
         "course_counts": course_counts
     }
 
-    with open(output_json_path, "w") as file:
+    with open(output_json_path, "w", encoding="utf-8") as file:
         json.dump(summary, file, indent=4)
+
+    return summary
+
+
+folder = os.path.dirname(os.path.abspath(__file__))
+
+input_csv = os.path.join(folder, "students.csv")
+output_json = os.path.join(folder, "summary.json")
+
+result = process_student_records(input_csv, output_json)
+
+print(json.dumps(result, indent=4))
+print("Processing completed successfully.")
