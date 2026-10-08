@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ex04_Search_Element {
+public class Ex03_Count_Even_Odd {
 
     public static void main(String[] args) {
 
@@ -17,23 +17,20 @@ public class Ex04_Search_Element {
             numbers[i] = sc.nextInt();
         }
 
-        System.out.print("Enter element to search: ");
-        int search = sc.nextInt();
+        int evenCount = 0;
+        int oddCount = 0;
 
-        boolean found = false;
+        for (int n1 : numbers) {
 
-        for (int i = 0; i < n; i++) {
-
-            if (numbers[i] == search) {
-                System.out.println("Element found at index " + i);
-                found = true;
-                break;
+            if (n1 % 2 == 0) {
+                evenCount++;
+            } else {
+                oddCount++;
             }
         }
 
-        if (!found) {
-            System.out.println("Element not found");
-        }
+        System.out.println("Even numbers = " + evenCount);
+        System.out.println("Odd numbers = " + oddCount);
 
         sc.close();
     }

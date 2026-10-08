@@ -1,20 +1,28 @@
-public class Ex05_Reverse_array {
+import java.util.Scanner;
+
+public class Ex05_Reverse_Array {
+
     public static void main(String[] args) {
-        int[] numbers = {10, 20, 30, 40, 50};
-        int[] reversed = new int[numbers.length];
 
-        for (int i = 0; i < numbers.length; i++) {
-            reversed[i] = numbers[numbers.length - 1 - i];
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+
+        System.out.println("Enter " + n + " integers:");
+
+        for (int i = 0; i < n; i++) {
+            numbers[i] = sc.nextInt();
         }
 
-        System.out.println("Original array:");
-        for (int n : numbers) {
-            System.out.print(n + " ");
+        System.out.println("Array in reverse order:");
+
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
         }
 
-        System.out.println("\nReversed array:");
-        for (int n : reversed) {
-            System.out.print(n + " ");
-        }
+        sc.close();
     }
 }
